@@ -1,5 +1,11 @@
 # Secure Login System
 
+## Overview
+
+This project implements a **secure authentication system** using Node.js with protections against brute-force and credential stuffing attacks. It includes password hashing, rate limiting, account lockout, and TOTP-based 2FA.
+
+---
+
 ## Features
 
 * Password hashing using bcrypt
@@ -18,6 +24,30 @@
 * MongoDB
 * bcrypt
 * speakeasy
+* qrcode
+* express-rate-limit
+
+---
+
+## How to Run
+
+1. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+2. Start the server:
+
+   ```
+   node server.js
+   ```
+
+3. Open in browser:
+
+   ```
+   http://localhost:3000/login.html
+   ```
 
 ---
 
@@ -84,29 +114,43 @@ Old OTP cannot be reused, preventing replay attacks.
 
 ![DB](images/db-hashed-password.png)
 
+---
+
 ### Successful Login
 
 ![Login Success](images/login-success.png)
+
+---
 
 ### Wrong Password Attempt
 
 ![Wrong Password](images/wrong-password.png)
 
+---
+
 ### Rate Limiting Triggered
 
 ![Rate Limit](images/rate-limit.png)
+
+---
 
 ### Account Lockout
 
 ![Lockout](images/account-lock.png)
 
+---
+
 ### QR Code for 2FA
 
 ![QR Code](images/qr-code.png)
 
+---
+
 ### Invalid OTP
 
 ![Invalid OTP](images/otp-failure.png)
+
+---
 
 ### OTP Verified Successfully
 
@@ -124,3 +168,5 @@ The system successfully prevents brute-force and credential stuffing attacks usi
 * two-factor authentication
 
 This ensures a secure login mechanism.
+
+---
